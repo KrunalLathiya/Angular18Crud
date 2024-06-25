@@ -1,0 +1,10 @@
+/* gst-edit.component.css */
+mat-card {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}

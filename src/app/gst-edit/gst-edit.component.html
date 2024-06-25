@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="angForm" (ngSubmit)="updateBusiness()">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Person Name</mat-label>
+          <input matInput formControlName="person_name" />
+          <mat-error *ngIf="angForm.get('person_name')?.hasError('required')">
+            Person Name is required.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Business Name</mat-label>
+          <input matInput formControlName="business_name" />
+          <mat-error *ngIf="angForm.get('business_name')?.hasError('required')">
+            Business Name is required.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Business GST Number</mat-label>
+          <input matInput formControlName="business_gst_number" />
+          <mat-error
+            *ngIf="angForm.get('business_gst_number')?.hasError('required')"
+          >
+            Business GST Number is required.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="angForm.invalid"
+        >
+          Update Business
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
